@@ -404,7 +404,7 @@
             <i class="fas fa-eye me-2" style="color: var(--secondary);"></i> أنت الآن تشاهد الترتيب والهدافين (وضع عام)
         </div>
 
-        <!-- لوحة الإعلانات (Notice Board) - معروضة مباراتين -->
+        <!-- لوحة الإعلانات (Notice Board) -->
         <div class="notice-board">
             <div class="row align-items-center">
                 <div class="col-md-8">
@@ -419,7 +419,7 @@
                     <div class="notice-item mt-3">
                         <i class="fas fa-trophy me-2" style="color: gold;"></i>
                         <strong>أفضل هداف:</strong> 
-                        <span id="topScorerNotice">عثمان (3 أهداف) - فريق 1</span>
+                        <span id="topScorerNotice">عثمان (5 أهداف) - فريق 1</span>
                     </div>
                 </div>
                 <div class="col-md-4 text-center">
@@ -433,7 +433,7 @@
             <h4 class="mb-4"><i class="fas fa-user-check me-2" style="color:var(--secondary);"></i> مرحباً بك — لوحة التحكم</h4>
             <div class="row">
                 <div class="col-md-6">
-                    <label class="form-label fw-700">تعديل نتيجة (لمباراة 4 مثلاً)</label>
+                    <label class="form-label fw-700">تعديل نتيجة (لمباراة 6 مثلاً)</label>
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" id="matchResultInput" placeholder="مثال: 3-1">
                         <button class="btn btn-success" id="submitResultBtn">تحديث</button>
@@ -442,7 +442,7 @@
                 <div class="col-md-6">
                     <label class="form-label fw-700">إضافة هداف (الاسم,الفريق,الأهداف)</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" id="scorerInput" placeholder="مثال: وليد,2,2">
+                        <input type="text" class="form-control" id="scorerInput" placeholder="مثال: عثمان,1,2">
                         <button class="btn btn-warning" id="addScorerBtn">إضافة</button>
                     </div>
                 </div>
@@ -524,39 +524,84 @@
                 6: ["زين", "عبدالله eee", "احمد ياسر", "ود المأمون", "محمد تنالي", "عمر"]
             };
 
+            // تحديث الهدافين بعد مباريات 27 فبراير
             let scorers = [
-                { player: "عثمان", team: 1, goals: 3 },
-                { player: "حجيرابي", team: 1, goals: 2 },
+                // فريق 1 (Saqour) - مجموع الأهداف 11
+                { player: "عثمان", team: 1, goals: 5 },  // 3 + 2
+                { player: "حجيرابي", team: 1, goals: 3 }, // 2 + 1
+                { player: "سعيد", team: 1, goals: 2 },    // 1 + 1
+                { player: "سامر", team: 1, goals: 1 },
+                { player: "مصطفى eee", team: 1, goals: 0 },
+                { player: "عصمان ماستر", team: 1, goals: 0 },
+                { player: "محمد الهادي", team: 1, goals: 0 },
+                
+                // فريق 2 (Falcons)
                 { player: "وليد", team: 2, goals: 2 },
-                { player: "العبيد", team: 4, goals: 2 },
-                { player: "سعيد", team: 1, goals: 1 },
+                { player: "معتصم التوم", team: 2, goals: 0 },
+                { player: "حماد", team: 2, goals: 0 },
+                { player: "مصطفى جنابو", team: 2, goals: 0 },
+                { player: "أصيل", team: 2, goals: 0 },
+                { player: "ياسر", team: 2, goals: 0 },
+                
+                // فريق 3 (Wolves)
+                { player: "سامي", team: 3, goals: 1 },
+                { player: "محمد التوم", team: 3, goals: 1 },
+                { player: "عبد الباقي", team: 3, goals: 0 },
+                { player: "العباس", team: 3, goals: 0 },
+                { player: "الشاذلي", team: 3, goals: 0 },
+                { player: "محمد خالد", team: 3, goals: 0 },
+                
+                // فريق 4 (Al hilal) - مجموع الأهداف 8
+                { player: "العبيد", team: 4, goals: 4 },  // 2 + 2
+                { player: "اب احمد", team: 4, goals: 2 }, // 1 + 1
+                { player: "ود الحسن", team: 4, goals: 1 },
+                { player: "مصطفى يعقوب", team: 4, goals: 1 },
+                { player: "ابوش", team: 4, goals: 0 },
+                { player: "معتصم ياسر", team: 4, goals: 0 },
+                
+                // فريق 5 (Legends) - مجموع الأهداف 4
+                { player: "محمد محي الدين", team: 5, goals: 2 }, // 1 + 1
+                { player: "جلال", team: 5, goals: 1 },
+                { player: "عبد الله بنقا", team: 5, goals: 1 },
+                { player: "طيارة", team: 5, goals: 0 },
+                { player: "سبنس", team: 5, goals: 0 },
+                { player: "نقا", team: 5, goals: 0 },
+                
+                // فريق 6 (Al merrikh) - مجموع الأهداف 3
                 { player: "محمد تنالي", team: 6, goals: 1 },
                 { player: "ود المأمون", team: 6, goals: 1 },
-                { player: "عبد الله بنقا", team: 5, goals: 1 },
-                { player: "محمد محي الدين", team: 5, goals: 1 },
-                { player: "اب احمد", team: 4, goals: 1 },
-                { player: "مصطفى يعقوب", team: 4, goals: 1 },
-                { player: "سامي", team: 3, goals: 1 },
-                { player: "محمد التوم", team: 3, goals: 1 }
+                { player: "عبدالله eee", team: 6, goals: 1 },
+                { player: "زين", team: 6, goals: 0 },
+                { player: "احمد ياسر", team: 6, goals: 0 },
+                { player: "عمر", team: 6, goals: 0 }
             ];
 
+            // تحديث الترتيب بعد مباريات 27 فبراير
             let standings = [
-                { teamId:1, name:teamNames[1], P:1, W:1, D:0, L:0, GF:6, GA:2, GD:4, Pts:3 },
-                { teamId:4, name:teamNames[4], P:1, W:1, D:0, L:0, GF:4, GA:2, GD:2, Pts:3 },
+                { teamId:1, name:teamNames[1], P:2, W:2, D:0, L:0, GF:11, GA:4, GD:7, Pts:6 },
+                { teamId:4, name:teamNames[4], P:2, W:2, D:0, L:0, GF:8, GA:3, GD:5, Pts:6 },
                 { teamId:2, name:teamNames[2], P:1, W:0, D:1, L:0, GF:2, GA:2, GD:0, Pts:1 },
-                { teamId:5, name:teamNames[5], P:1, W:0, D:1, L:0, GF:2, GA:2, GD:0, Pts:1 },
+                { teamId:5, name:teamNames[5], P:2, W:0, D:1, L:1, GF:4, GA:7, GD:-3, Pts:1 },
                 { teamId:3, name:teamNames[3], P:1, W:0, D:0, L:1, GF:2, GA:4, GD:-2, Pts:0 },
-                { teamId:6, name:teamNames[6], P:1, W:0, D:0, L:1, GF:2, GA:6, GD:-4, Pts:0 }
+                { teamId:6, name:teamNames[6], P:2, W:0, D:0, L:2, GF:3, GA:10, GD:-7, Pts:0 }
             ];
 
+            // تحديث المباريات بعد نتائج 27 فبراير
             let matches = [
+                // 25 فبراير
                 { id:1, home:1, away:6, date:"25 Feb 9:30 PM", result:"6 - 2" },
+                
+                // 26 فبراير
                 { id:2, home:2, away:5, date:"26 Feb 9:30 PM", result:"2 - 2" },
                 { id:3, home:3, away:4, date:"26 Feb 10:30 PM", result:"2 - 4" },
-                { id:4, home:4, away:6, date:"27 Feb 9:30 PM", result:"?" },
-                { id:5, home:1, away:5, date:"27 Feb 10:30 PM", result:"?" },
-                { id:6, home:1, away:4, date:"28 Feb 9:30 PM", result:"?" },
-                { id:7, home:2, away:3, date:"28 Feb 10:30 PM", result:"?" },
+                
+                // 27 فبراير (نتائج الليلة)
+                { id:4, home:4, away:6, date:"27 Feb 9:30 PM", result:"4 - 1" },
+                { id:5, home:1, away:5, date:"27 Feb 10:30 PM", result:"5 - 2" },
+                
+                // المباريات القادمة
+                { id:6, home:1, away:4, date:"28 Feb 10:30 PM", result:"?" },  // القمة الساعة 10:30
+                { id:7, home:2, away:3, date:"28 Feb 9:30 PM", result:"?" },   // الساعة 9:30
                 { id:8, home:2, away:6, date:"1 Mar 9:30 PM", result:"?" },
                 { id:9, home:3, away:5, date:"1 Mar 10:30 PM", result:"?" },
                 { id:10, home:4, away:2, date:"2 Mar 9:30 PM", result:"?" },
@@ -616,13 +661,11 @@
                     const nextMatch = nextMatches[0];
                     const matchDate = new Date();
                     
-                    if (nextMatch.date.includes("27 Feb")) matchDate.setDate(27);
-                    else if (nextMatch.date.includes("28 Feb")) matchDate.setDate(28);
+                    if (nextMatch.date.includes("28 Feb")) matchDate.setDate(28);
                     else if (nextMatch.date.includes("1 Mar")) matchDate.setMonth(2, 1);
                     else if (nextMatch.date.includes("2 Mar")) matchDate.setMonth(2, 2);
                     else if (nextMatch.date.includes("3 Mar")) matchDate.setMonth(2, 3);
                     
-                    // تعديل هنا: 9:30 PM = 21:30, 10:30 PM = 22:30
                     matchDate.setHours(nextMatch.date.includes("9:30") ? 21 : 22, 30, 0);
                     
                     const diff = matchDate - now;
@@ -674,8 +717,16 @@
                     </div>`;
                 });
                 
+                html += `<div class="match-day"><i class="fas fa-moon me-2"></i> 27 فبراير 2026</div>`;
+                matches.filter(m => m.id === 4 || m.id === 5).forEach(m => {
+                    html += `<div class="d-flex justify-content-between align-items-center p-3 match-item">
+                        <div><span class="team-badge team-${m.home}">${m.home}</span> ${teamNames[m.home]}  vs  ${teamNames[m.away]} <span class="team-badge team-${m.away}">${m.away}</span></div>
+                        <div><span class="badge bg-success p-2">${m.result}</span> <span class="text-muted ms-2"><i class="far fa-clock"></i> ${m.date}</span></div>
+                    </div>`;
+                });
+                
                 html += `<div class="match-day"><i class="fas fa-calendar-alt me-2"></i> المباريات القادمة</div>`;
-                matches.filter(m => m.id > 3).forEach(m => {
+                matches.filter(m => m.id > 5).forEach(m => {
                     html += `<div class="d-flex justify-content-between align-items-center p-3 match-item">
                         <div><span class="team-badge team-${m.home}">${m.home}</span> ${teamNames[m.home]}  vs  ${teamNames[m.away]} <span class="team-badge team-${m.away}">${m.away}</span></div>
                         <div><span class="badge bg-secondary p-2">${m.result}</span> <span class="text-muted ms-2"><i class="far fa-clock"></i> ${m.date}</span></div>
@@ -692,7 +743,9 @@
                 const displayed = showAllScorers ? sorted : sorted.slice(0,5);
                 let html = '';
                 displayed.forEach(s => {
-                    html += `<tr><td>${s.player}</td><td><span class="team-badge team-${s.team}">${s.team}</span></td><td>${s.goals}</td></tr>`;
+                    if(s.goals > 0) { // عرض اللاعبين الذين سجلوا فقط
+                        html += `<tr><td>${s.player}</td><td><span class="team-badge team-${s.team}">${s.team}</span></td><td>${s.goals}</td></tr>`;
+                    }
                 });
                 document.getElementById('scorersList').innerHTML = html;
                 updateNoticeBoard();
@@ -713,6 +766,8 @@
             document.getElementById('adminPopupBtn').addEventListener('click', ()=>{
                 overlay.classList.remove('hidden');
                 popup.classList.remove('hidden');
+                document.getElementById('popupUsername').value = '';
+                document.getElementById('popupPassword').value = '';
             });
             
             document.getElementById('popupCloseBtn').addEventListener('click', ()=>{
@@ -735,8 +790,8 @@
             // Admin actions
             document.getElementById('submitResultBtn').addEventListener('click', ()=>{
                 const newRes = document.getElementById('matchResultInput').value.trim();
-                if(newRes && matches[3]) { 
-                    matches[3].result = newRes; 
+                if(newRes && matches[5]) { 
+                    matches[5].result = newRes; 
                     renderMatches(); 
                     document.getElementById('matchResultInput').value = ''; 
                 }
@@ -769,8 +824,8 @@
             document.getElementById('matchesList').addEventListener('dblclick', (e)=> {
                 if(!adminPanel.classList.contains('hidden')) {
                     let newRes = prompt('أدخل النتيجة الجديدة (مثال 2-1)');
-                    if(newRes && newRes.includes('-') && matches[3]) { 
-                        matches[3].result = newRes; 
+                    if(newRes && newRes.includes('-') && matches[5]) { 
+                        matches[5].result = newRes; 
                         renderMatches(); 
                     }
                 } else alert("يجب تسجيل الدخول كمسؤول أولاً");
