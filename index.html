@@ -433,7 +433,7 @@
             <h4 class="mb-4"><i class="fas fa-user-check me-2" style="color:var(--secondary);"></i> مرحباً بك — لوحة التحكم</h4>
             <div class="row">
                 <div class="col-md-6">
-                    <label class="form-label fw-700">تعديل نتيجة (لمباراة 10 مثلاً)</label>
+                    <label class="form-label fw-700">تعديل نتيجة (لمباراة 12 مثلاً)</label>
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" id="matchResultInput" placeholder="مثال: 3-1">
                         <button class="btn btn-success" id="submitResultBtn">تحديث</button>
@@ -524,28 +524,30 @@
                 6: ["زين", "عبدالله eee", "احمد ياسر", "ود المأمون", "محمد تنالي", "عمر"]
             };
 
-            // تحديث الهدافين بعد مباريات 2 مارس (مرتبين تنازلياً)
+            // تحديث الهدافين بعد مباريات 3 مارس
             let scorers = [
                 // فريق 1 (Saqour)
                 { player: "عثمان", team: 1, goals: 7 },
-                { player: "حجيرابي", team: 1, goals: 5 },
+                { player: "حجيرابи", team: 1, goals: 5 },
+                { player: "مصطفى eee", team: 1, goals: 1 },
                 { player: "سعيد", team: 1, goals: 2 },
                 { player: "سامر", team: 1, goals: 1 },
                 
                 // فريق 2 (Falcons)
-                { player: "معتصم التوم", team: 2, goals: 4 },  // 2 + 2
-                { player: "وليد", team: 2, goals: 3 },
+                { player: "وليد", team: 2, goals: 4 },  // 3 + 1
+                { player: "معتصم التوم", team: 2, goals: 4 },
                 { player: "ياسر", team: 2, goals: 1 },
                 { player: "مصطفى جنابو", team: 2, goals: 1 },
                 
                 // فريق 3 (Wolves)
-                { player: "العباس", team: 3, goals: 3 },  // 1 + 2
-                { player: "سامي", team: 3, goals: 3 },    // 2 + 1
-                { player: "محمد التوم", team: 3, goals: 3 }, // 2 + 1
+                { player: "سامي", team: 3, goals: 4 },   // 3 + 1
+                { player: "العباس", team: 3, goals: 3 },
+                { player: "محمد التوم", team: 3, goals: 3 },
+                { player: "عبد الباقي", team: 3, goals: 2 },  // 0 + 1 (من المباراة الفاتت) + 1
                 
                 // فريق 4 (Al hilal)
-                { player: "العبيد", team: 4, goals: 4 },
-                { player: "اب احمد", team: 4, goals: 2 },
+                { player: "العبيد", team: 4, goals: 6 },  // 4 + 2
+                { player: "اب احمد", team: 4, goals: 3 }, // 2 + 1
                 { player: "مصطفى يعقوب", team: 4, goals: 2 },
                 { player: "ود الحسن", team: 4, goals: 1 },
                 
@@ -557,25 +559,22 @@
                 { player: "عبد الله بنقا", team: 5, goals: 1 },
                 
                 // فريق 6 (Al merrikh)
-                { player: "محمد تنالي", team: 6, goals: 4 },  // 1 + 3
-                { player: "عبدالله eee", team: 6, goals: 4 }, // 1 + 3
-                { player: "ود المأمون", team: 6, goals: 2 },  // 1 + 1
-                { player: "احمد ياسر", team: 6, goals: 0 },
-                { player: "زين", team: 6, goals: 0 },
-                { player: "عمر", team: 6, goals: 0 }
+                { player: "محمد تنالي", team: 6, goals: 4 },
+                { player: "عبدالله eee", team: 6, goals: 4 },
+                { player: "ود المأمون", team: 6, goals: 2 }
             ];
 
-            // تحديث الترتيب بعد مباريات 2 مارس
+            // تحديث الترتيب بعد مباريات 3 مارس
             let standings = [
-                { teamId:1, name:teamNames[1], P:3, W:3, D:0, L:0, GF:15, GA:5, GD:10, Pts:9 },
-                { teamId:4, name:teamNames[4], P:3, W:2, D:0, L:1, GF:9, GA:7, GD:2, Pts:6 },
-                { teamId:3, name:teamNames[3], P:3, W:1, D:1, L:1, GF:9, GA:9, GD:0, Pts:4 },
+                { teamId:1, name:teamNames[1], P:4, W:3, D:1, L:0, GF:17, GA:7, GD:10, Pts:10 },
+                { teamId:4, name:teamNames[4], P:4, W:3, D:0, L:1, GF:12, GA:8, GD:4, Pts:9 },
+                { teamId:3, name:teamNames[3], P:4, W:1, D:2, L:1, GF:11, GA:11, GD:0, Pts:5 },
                 { teamId:6, name:teamNames[6], P:3, W:1, D:0, L:2, GF:10, GA:14, GD:-4, Pts:3 },
-                { teamId:2, name:teamNames[2], P:3, W:0, D:2, L:1, GF:9, GA:12, GD:-3, Pts:2 },
+                { teamId:2, name:teamNames[2], P:4, W:0, D:2, L:2, GF:10, GA:15, GD:-5, Pts:2 },
                 { teamId:5, name:teamNames[5], P:3, W:0, D:1, L:2, GF:6, GA:11, GD:-5, Pts:1 }
             ];
 
-            // تحديث المباريات بعد نتائج 2 مارس - مع عكس الزمن حسب الطلب
+            // تحديث المباريات بعد نتائج 3 مارس
             let matches = [
                 // 25 فبراير
                 { id:1, home:1, away:6, date:"25 Feb 9:30 PM", result:"6 - 2" },
@@ -596,11 +595,15 @@
                 { id:8, home:2, away:6, date:"2 Mar 9:30 PM", result:"4 - 7" },
                 { id:9, home:3, away:5, date:"2 Mar 10:30 PM", result:"4 - 2" },
                 
-                // المباريات القادمة - مع عكس الزمن حسب الطلب
-                { id:10, home:1, away:3, date:"3 Mar 9:30 PM", result:"?" },    // الأولى 9:30
-                { id:11, home:4, away:2, date:"3 Mar 10:30 PM", result:"?" },   // الثانية 10:30
+                // 3 مارس (نتائج الليلة)
+                { id:10, home:1, away:3, date:"3 Mar 9:30 PM", result:"2 - 2" },
+                { id:11, home:4, away:2, date:"3 Mar 10:30 PM", result:"3 - 1" },
+                
+                // المباريات القادمة (4 و 5 مارس)
                 { id:12, home:1, away:2, date:"4 Mar 9:30 PM", result:"?" },
-                { id:13, home:5, away:4, date:"4 Mar 10:30 PM", result:"?" }
+                { id:13, home:6, away:5, date:"4 Mar 10:30 PM", result:"?" },
+                { id:14, home:5, away:4, date:"5 Mar 9:30 PM", result:"?" },
+                { id:15, home:6, away:3, date:"5 Mar 10:30 PM", result:"?" }
             ];
 
             function getNextMatches() {
@@ -654,8 +657,8 @@
                     const nextMatch = nextMatches[0];
                     const matchDate = new Date();
                     
-                    if (nextMatch.date.includes("3 Mar")) matchDate.setMonth(2, 3);
-                    else if (nextMatch.date.includes("4 Mar")) matchDate.setMonth(2, 4);
+                    if (nextMatch.date.includes("4 Mar")) matchDate.setMonth(2, 4);
+                    else if (nextMatch.date.includes("5 Mar")) matchDate.setMonth(2, 5);
                     
                     matchDate.setHours(nextMatch.date.includes("9:30") ? 21 : 22, 30, 0);
                     
@@ -732,8 +735,16 @@
                     </div>`;
                 });
                 
+                html += `<div class="match-day"><i class="fas fa-moon me-2"></i> 3 مارس 2026</div>`;
+                matches.filter(m => m.id === 10 || m.id === 11).forEach(m => {
+                    html += `<div class="d-flex justify-content-between align-items-center p-3 match-item">
+                        <div><span class="team-badge team-${m.home}">${m.home}</span> ${teamNames[m.home]}  vs  ${teamNames[m.away]} <span class="team-badge team-${m.away}">${m.away}</span></div>
+                        <div><span class="badge bg-success p-2">${m.result}</span> <span class="text-muted ms-2"><i class="far fa-clock"></i> ${m.date}</span></div>
+                    </div>`;
+                });
+                
                 html += `<div class="match-day"><i class="fas fa-calendar-alt me-2"></i> المباريات القادمة</div>`;
-                matches.filter(m => m.id > 9).forEach(m => {
+                matches.filter(m => m.id > 11).forEach(m => {
                     html += `<div class="d-flex justify-content-between align-items-center p-3 match-item">
                         <div><span class="team-badge team-${m.home}">${m.home}</span> ${teamNames[m.home]}  vs  ${teamNames[m.away]} <span class="team-badge team-${m.away}">${m.away}</span></div>
                         <div><span class="badge bg-secondary p-2">${m.result}</span> <span class="text-muted ms-2"><i class="far fa-clock"></i> ${m.date}</span></div>
@@ -747,7 +758,16 @@
             let showAllScorers = false;
             function renderScorers() {
                 const sorted = [...scorers].sort((a,b) => b.goals - a.goals);
-                const displayed = showAllScorers ? sorted : sorted.slice(0,5);
+                // إزالة التكرارات إن وجدت
+                const uniqueScorers = [];
+                const seen = new Set();
+                sorted.forEach(s => {
+                    if(!seen.has(s.player)) {
+                        seen.add(s.player);
+                        uniqueScorers.push(s);
+                    }
+                });
+                const displayed = showAllScorers ? uniqueScorers : uniqueScorers.slice(0,5);
                 let html = '';
                 displayed.forEach(s => {
                     if(s.goals > 0) {
@@ -797,8 +817,8 @@
             // Admin actions
             document.getElementById('submitResultBtn').addEventListener('click', ()=>{
                 const newRes = document.getElementById('matchResultInput').value.trim();
-                if(newRes && matches[9]) { 
-                    matches[9].result = newRes; 
+                if(newRes && matches[11]) { 
+                    matches[11].result = newRes; 
                     renderMatches(); 
                     document.getElementById('matchResultInput').value = ''; 
                 }
@@ -831,8 +851,8 @@
             document.getElementById('matchesList').addEventListener('dblclick', (e)=> {
                 if(!adminPanel.classList.contains('hidden')) {
                     let newRes = prompt('أدخل النتيجة الجديدة (مثال 2-1)');
-                    if(newRes && newRes.includes('-') && matches[9]) { 
-                        matches[9].result = newRes; 
+                    if(newRes && newRes.includes('-') && matches[11]) { 
+                        matches[11].result = newRes; 
                         renderMatches(); 
                     }
                 } else alert("يجب تسجيل الدخول كمسؤول أولاً");
@@ -851,4 +871,4 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-                            </html>
+    </html>
