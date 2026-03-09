@@ -356,9 +356,37 @@
             border-radius: 30px !important;
         }
         
+        .structure-card {
+            background: linear-gradient(145deg, #2c3e50, #1e2a3a);
+            color: white;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 2px solid var(--secondary);
+        }
+        
+        .group-stage {
+            background: linear-gradient(135deg, #27ae60, #229954);
+        }
+        
+        .knockout-stage {
+            background: linear-gradient(135deg, #e67e22, #d35400);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 40px;
+            font-weight: bold;
+            margin: 20px 0 10px;
+            border-right: 8px solid var(--primary);
+        }
+        
+        .final-stage {
+            background: linear-gradient(135deg, #f1c40f, #f39c12);
+            color: var(--dark);
+        }
+        
         .hidden { display: none; }
         
-        /* تنسيق خاص للمباراتين في الإعلان */
+        /* تنسيق خاص للمباريات في الإعلان */
         .next-matches-container {
             display: flex;
             flex-direction: column;
@@ -410,20 +438,100 @@
                 <div class="col-md-8">
                     <h3><i class="fas fa-bullhorn me-2"></i> إعلان المباريات</h3>
                     
-                    <!-- المباراتين القادمتين -->
+                    <!-- المباريات القادمة -->
                     <div class="next-matches-container" id="nextMatchesContainer">
-                        <!-- يتم تعبئتها بواسطة JavaScript -->
+                        <div class="notice-item">
+                            <i class="fas fa-futbol me-2" style="color: var(--secondary);"></i>
+                            <strong>المباريات القادمة:</strong>
+                        </div>
+                        <div class="next-match-item">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="badge bg-info me-2">ربع نهائي - ذهاب</span>
+                                    <strong>Al merrikh (6) vs Wolves (3)</strong>
+                                </div>
+                                <span class="badge bg-warning text-dark">
+                                    <i class="far fa-clock me-1"></i> 9 Mar 10:00 PM
+                                </span>
+                            </div>
+                        </div>
+                        <div class="next-match-item">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="badge bg-primary me-2">ربع نهائي - إياب</span>
+                                    <strong>Falcons (2) vs Legends (5)</strong>
+                                </div>
+                                <span class="badge bg-warning text-dark">
+                                    <i class="far fa-clock me-1"></i> 10 Mar 10:00 PM
+                                </span>
+                            </div>
+                        </div>
+                        <div class="next-match-item">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="badge bg-primary me-2">ربع نهائي - إياب</span>
+                                    <strong>Wolves (3) vs Al merrikh (6)</strong>
+                                </div>
+                                <span class="badge bg-warning text-dark">
+                                    <i class="far fa-clock me-1"></i> 11 Mar 10:00 PM
+                                </span>
+                            </div>
+                        </div>
+                        <div class="next-match-item">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="badge bg-info me-2">نصف نهائي - ذهاب</span>
+                                    <strong>Al hilal fc (4) vs (الفائز من 5 vs 2)</strong>
+                                </div>
+                                <span class="badge bg-warning text-dark">
+                                    <i class="far fa-clock me-1"></i> 12 Mar 10:00 PM
+                                </span>
+                            </div>
+                        </div>
+                        <div class="next-match-item">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="badge bg-info me-2">نصف نهائي - ذهاب</span>
+                                    <strong>Saqour Al_jedyan (1) vs (الفائز من 6 vs 3)</strong>
+                                </div>
+                                <span class="badge bg-warning text-dark">
+                                    <i class="far fa-clock me-1"></i> 13 Mar 10:00 PM
+                                </span>
+                            </div>
+                        </div>
+                        <div class="next-match-item">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="badge bg-primary me-2">نصف نهائي - إياب</span>
+                                    <strong>(الفائز من 5 vs 2) vs Al hilal fc (4)</strong>
+                                </div>
+                                <span class="badge bg-warning text-dark">
+                                    <i class="far fa-clock me-1"></i> 14 Mar 10:00 PM
+                                </span>
+                            </div>
+                        </div>
+                        <div class="next-match-item">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="badge bg-primary me-2">نصف نهائي - إياب</span>
+                                    <strong>(الفائز من 6 vs 3) vs Saqour Al_jedyan (1)</strong>
+                                </div>
+                                <span class="badge bg-warning text-dark">
+                                    <i class="far fa-clock me-1"></i> 15 Mar 10:00 PM
+                                </span>
+                            </div>
+                        </div>
                     </div>
                     
                     <!-- أفضل هداف -->
                     <div class="notice-item mt-3">
                         <i class="fas fa-trophy me-2" style="color: gold;"></i>
                         <strong>أفضل هداف:</strong> 
-                        <span id="topScorerNotice">عثمان (7 أهداف) - فريق 1</span>
+                        <span id="topScorerNotice">عثمان (9 أهداف) - فريق 1</span>
                     </div>
                 </div>
                 <div class="col-md-4 text-center">
-                    <div class="countdown" id="countdown">24:00:00</div>
+                    <div class="countdown" id="countdown">--:--:--</div>
                     <p class="mb-0"><i class="far fa-calendar-alt me-1"></i> حتى أول مباراة</p>
                 </div>
             </div>
@@ -433,7 +541,7 @@
             <h4 class="mb-4"><i class="fas fa-user-check me-2" style="color:var(--secondary);"></i> مرحباً بك — لوحة التحكم</h4>
             <div class="row">
                 <div class="col-md-6">
-                    <label class="form-label fw-700">تعديل نتيجة (لمباراة 12 مثلاً)</label>
+                    <label class="form-label fw-700">تعديل نتيجة</label>
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" id="matchResultInput" placeholder="مثال: 3-1">
                         <button class="btn btn-success" id="submitResultBtn">تحديث</button>
@@ -442,7 +550,7 @@
                 <div class="col-md-6">
                     <label class="form-label fw-700">إضافة هداف (الاسم,الفريق,الأهداف)</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" id="scorerInput" placeholder="مثال: عثمان,1,2">
+                        <input type="text" class="form-control" id="scorerInput" placeholder="مثال: طيارة,5,2">
                         <button class="btn btn-warning" id="addScorerBtn">إضافة</button>
                     </div>
                 </div>
@@ -508,7 +616,7 @@
         </div>
 
         <div class="footer-note">
-            <i class="fas fa-calendar-alt me-2" style="color: var(--secondary);"></i> أول مباراة: 25/02/2026 • مباراتان يومياً 9:30–10:30 و 10:30–11:30
+            <i class="fas fa-calendar-alt me-2" style="color: var(--secondary);"></i> أول مباراة: 25/02/2026 • مباريات يومياً 10:00 مساءً
         </div>
     </div>
 
@@ -518,97 +626,72 @@
             const teamPlayers = {
                 1: ["حجيرابي", "مصطفى eee", "سعيد", "عصمان ماستر", "سامر", "محمد الهادي"],
                 2: ["معتصم التوم", "حماد", "مصطفى جنابو", "أصيل", "وليد", "ياسر"],
-                3: ["محمد التوم", "سامي", "عبد الباقي", "العباس", "الشاذلي", "محمد خالد"],
+                3: ["محمد التوم", "سامي", "عبد الباقي", "الشيخ", "بقّة", "محمد خالد"],
                 4: ["العبيد", "اب احمد", "ود الحسن", "ابوش", "معتصم ياسر", "مصطفى يعقوب"],
-                5: ["عبد الله بنقا", "طيارة", "سبنس", "محمد محي الدين", "نقا", "جلال"],
-                6: ["زين", "عبدالله eee", "احمد ياسر", "ود المأمون", "محمد تنالي", "عمر"]
+                5: ["طيارة", "جلال", "محمد محي الدين", "عبد الله بنقا", "سبنس", "نقا"],
+                6: ["زين", "عبدالله eee", "وديع", "ود المأمون", "محمد تنالي", "عمر"]
             };
 
-            // تحديث الهدافين بعد مباريات 3 مارس
+            // تحديث الهدافين حسب الصورة بالضبط
             let scorers = [
-                // فريق 1 (Saqour)
-                { player: "عثمان", team: 1, goals: 7 },
-                { player: "حجيرابи", team: 1, goals: 5 },
-                { player: "مصطفى eee", team: 1, goals: 1 },
-                { player: "سعيد", team: 1, goals: 2 },
-                { player: "سامر", team: 1, goals: 1 },
-                
-                // فريق 2 (Falcons)
-                { player: "وليد", team: 2, goals: 4 },  // 3 + 1
-                { player: "معتصم التوم", team: 2, goals: 4 },
-                { player: "ياسر", team: 2, goals: 1 },
-                { player: "مصطفى جنابو", team: 2, goals: 1 },
-                
-                // فريق 3 (Wolves)
-                { player: "سامي", team: 3, goals: 4 },   // 3 + 1
-                { player: "العباس", team: 3, goals: 3 },
-                { player: "محمد التوم", team: 3, goals: 3 },
-                { player: "عبد الباقي", team: 3, goals: 2 },  // 0 + 1 (من المباراة الفاتت) + 1
-                
-                // فريق 4 (Al hilal)
-                { player: "العبيد", team: 4, goals: 6 },  // 4 + 2
-                { player: "اب احمد", team: 4, goals: 3 }, // 2 + 1
-                { player: "مصطفى يعقوب", team: 4, goals: 2 },
-                { player: "ود الحسن", team: 4, goals: 1 },
-                
-                // فريق 5 (Legends)
-                { player: "محمد محي الدين", team: 5, goals: 2 },
-                { player: "طيارة", team: 5, goals: 1 },
-                { player: "نقا", team: 5, goals: 1 },
-                { player: "جلال", team: 5, goals: 1 },
-                { player: "عبد الله بنقا", team: 5, goals: 1 },
-                
-                // فريق 6 (Al merrikh)
-                { player: "محمد تنالي", team: 6, goals: 4 },
-                { player: "عبدالله eee", team: 6, goals: 4 },
-                { player: "ود المأمون", team: 6, goals: 2 }
+                { player: "عثمان", team: 1, goals: 9 },
+                { player: "طيارة", team: 5, goals: 7 },      // <--- 7 أهداف
+                { player: "العبيد", team: 4, goals: 7 },
+                { player: "عبدالله eee", team: 6, goals: 7 },
+                { player: "معتصم التوم", team: 2, goals: 7 }, // <--- 7 أهداف
+                { player: "حجيرابي", team: 1, goals: 6 },
+                { player: "محمد التوم", team: 3, goals: 6 },
+                { player: "محمد تنالي", team: 6, goals: 6 },
+                { player: "وليد", team: 2, goals: 5 },
+                { player: "سامي", team: 3, goals: 5 },
+                { player: "جلال", team: 5, goals: 5 },
+                { player: "سعيد", team: 1, goals: 4 }
             ];
 
-            // تحديث الترتيب بعد مباريات 3 مارس
+            // تحديث الترتيب
             let standings = [
-                { teamId:1, name:teamNames[1], P:4, W:3, D:1, L:0, GF:17, GA:7, GD:10, Pts:10 },
-                { teamId:4, name:teamNames[4], P:4, W:3, D:0, L:1, GF:12, GA:8, GD:4, Pts:9 },
-                { teamId:3, name:teamNames[3], P:4, W:1, D:2, L:1, GF:11, GA:11, GD:0, Pts:5 },
-                { teamId:6, name:teamNames[6], P:3, W:1, D:0, L:2, GF:10, GA:14, GD:-4, Pts:3 },
-                { teamId:2, name:teamNames[2], P:4, W:0, D:2, L:2, GF:10, GA:15, GD:-5, Pts:2 },
-                { teamId:5, name:teamNames[5], P:3, W:0, D:1, L:2, GF:6, GA:11, GD:-5, Pts:1 }
+                { teamId:1, name:teamNames[1], P:5, W:4, D:1, L:0, GF:24, GA:10, GD:14, Pts:13 },
+                { teamId:4, name:teamNames[4], P:5, W:3, D:0, L:2, GF:14, GA:11, GD:3, Pts:9 },
+                { teamId:3, name:teamNames[3], P:5, W:2, D:2, L:1, GF:19, GA:17, GD:2, Pts:8 },
+                { teamId:5, name:teamNames[5], P:5, W:2, D:1, L:2, GF:19, GA:18, GD:1, Pts:7 },
+                { teamId:6, name:teamNames[6], P:5, W:1, D:0, L:4, GF:18, GA:28, GD:-10, Pts:3 },
+                { teamId:2, name:teamNames[2], P:5, W:0, D:2, L:3, GF:18, GA:29, GD:-11, Pts:2 }
             ];
 
-            // تحديث المباريات بعد نتائج 3 مارس
+            // تحديث المباريات - ربع نهائي + نصف نهائي
             let matches = [
-                // 25 فبراير
-                { id:1, home:1, away:6, date:"25 Feb 9:30 PM", result:"6 - 2" },
+                // دوري المجموعات
+                { id:1, home:1, away:6, date:"25 Feb 10:00 PM", result:"6 - 2", stage: "دوري المجموعات" },
+                { id:2, home:2, away:5, date:"26 Feb 10:00 PM", result:"2 - 2", stage: "دوري المجموعات" },
+                { id:3, home:3, away:4, date:"26 Feb 10:00 PM", result:"2 - 4", stage: "دوري المجموعات" },
+                { id:4, home:4, away:6, date:"27 Feb 10:00 PM", result:"4 - 1", stage: "دوري المجموعات" },
+                { id:5, home:1, away:5, date:"27 Feb 10:00 PM", result:"5 - 2", stage: "دوري المجموعات" },
+                { id:6, home:2, away:3, date:"28 Feb 10:00 PM", result:"3 - 3", stage: "دوري المجموعات" },
+                { id:7, home:1, away:4, date:"28 Feb 10:00 PM", result:"4 - 1", stage: "دوري المجموعات" },
+                { id:8, home:2, away:6, date:"2 Mar 10:00 PM", result:"4 - 7", stage: "دوري المجموعات" },
+                { id:9, home:3, away:5, date:"2 Mar 10:00 PM", result:"4 - 2", stage: "دوري المجموعات" },
+                { id:10, home:1, away:3, date:"3 Mar 10:00 PM", result:"2 - 2", stage: "دوري المجموعات" },
+                { id:11, home:4, away:2, date:"3 Mar 10:00 PM", result:"3 - 1", stage: "دوري المجموعات" },
+                { id:12, home:1, away:2, date:"4 Mar 10:00 PM", result:"7 - 3", stage: "دوري المجموعات" },
+                { id:13, home:6, away:5, date:"4 Mar 10:00 PM", result:"2 - 8", stage: "دوري المجموعات" },
+                { id:14, home:6, away:3, date:"5 Mar 10:00 PM", result:"6 - 8", stage: "دوري المجموعات" },
+                { id:15, home:4, away:5, date:"5 Mar 10:00 PM", result:"2 - 3", stage: "دوري المجموعات" },
                 
-                // 26 فبراير
-                { id:2, home:2, away:5, date:"26 Feb 9:30 PM", result:"2 - 2" },
-                { id:3, home:3, away:4, date:"26 Feb 10:30 PM", result:"2 - 4" },
+                // ربع النهائي
+                { id:16, home:5, away:2, date:"8 Mar 10:00 PM", result:"7 - 5", stage: "ربع النهائي - ذهاب (Legends vs Falcons)" },
+                { id:17, home:6, away:3, date:"9 Mar 10:00 PM", result:"?", stage: "ربع النهائي - ذهاب (Al merrikh vs Wolves)" },
+                { id:18, home:2, away:5, date:"10 Mar 10:00 PM", result:"?", stage: "ربع النهائي - إياب (Falcons vs Legends)" },
+                { id:19, home:3, away:6, date:"11 Mar 10:00 PM", result:"?", stage: "ربع النهائي - إياب (Wolves vs Al merrikh)" },
                 
-                // 27 فبراير
-                { id:4, home:4, away:6, date:"27 Feb 9:30 PM", result:"4 - 1" },
-                { id:5, home:1, away:5, date:"27 Feb 10:30 PM", result:"5 - 2" },
-                
-                // 28 فبراير
-                { id:6, home:2, away:3, date:"28 Feb 9:30 PM", result:"3 - 3" },
-                { id:7, home:1, away:4, date:"28 Feb 10:30 PM", result:"4 - 1" },
-                
-                // 2 مارس
-                { id:8, home:2, away:6, date:"2 Mar 9:30 PM", result:"4 - 7" },
-                { id:9, home:3, away:5, date:"2 Mar 10:30 PM", result:"4 - 2" },
-                
-                // 3 مارس (نتائج الليلة)
-                { id:10, home:1, away:3, date:"3 Mar 9:30 PM", result:"2 - 2" },
-                { id:11, home:4, away:2, date:"3 Mar 10:30 PM", result:"3 - 1" },
-                
-                // المباريات القادمة (4 و 5 مارس)
-                { id:12, home:1, away:2, date:"4 Mar 9:30 PM", result:"?" },
-                { id:13, home:6, away:5, date:"4 Mar 10:30 PM", result:"?" },
-                { id:14, home:5, away:4, date:"5 Mar 9:30 PM", result:"?" },
-                { id:15, home:6, away:3, date:"5 Mar 10:30 PM", result:"?" }
+                // نصف النهائي (حسب طلبك)
+                { id:20, home:4, away:0, date:"12 Mar 10:00 PM", result:"?", stage: "نصف النهائي - ذهاب (Al hilal fc vs الفائز من 5vs2)" },
+                { id:21, home:1, away:0, date:"13 Mar 10:00 PM", result:"?", stage: "نصف النهائي - ذهاب (Saqour Al_jedyan vs الفائز من 6vs3)" },
+                { id:22, home:0, away:4, date:"14 Mar 10:00 PM", result:"?", stage: "نصف النهائي - إياب (الفائز من 5vs2 vs Al hilal fc)" },
+                { id:23, home:0, away:1, date:"15 Mar 10:00 PM", result:"?", stage: "نصف النهائي - إياب (الفائز من 6vs3 vs Saqour Al_jedyan)" }
             ];
 
             function getNextMatches() {
-                // جلب أول مباراتين لم تلعبا بعد
-                return matches.filter(m => m.result === "?").slice(0, 2);
+                return matches.filter(m => m.result === "?").slice(0, 4);
             }
 
             function updateNoticeBoard() {
@@ -618,16 +701,17 @@
                 if (nextMatches.length > 0) {
                     let html = '<div class="notice-item"><i class="fas fa-futbol me-2" style="color: var(--secondary);"></i><strong>المباريات القادمة:</strong></div>';
                     
-                    nextMatches.forEach((match, index) => {
+                    nextMatches.forEach((match) => {
+                        let badgeClass = 'bg-info';
+                        if (match.stage.includes('إياب')) badgeClass = 'bg-primary';
+                        let stageType = match.stage.includes('ذهاب') ? 'ذهاب' : (match.stage.includes('إياب') ? 'إياب' : '');
+                        
                         html += `
                             <div class="next-match-item">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div>
-                                        <span class="team-badge team-${match.home}" style="background: rgba(255,255,255,0.2);">${match.home}</span>
-                                        ${teamNames[match.home]} 
-                                        <span class="mx-2">vs</span> 
-                                        ${teamNames[match.away]} 
-                                        <span class="team-badge team-${match.away}" style="background: rgba(255,255,255,0.2);">${match.away}</span>
+                                        <span class="badge ${badgeClass} me-2">${match.stage.split(' ')[0]} - ${stageType}</span>
+                                        <strong>${match.stage}</strong>
                                     </div>
                                     <span class="badge bg-warning text-dark">
                                         <i class="far fa-clock me-1"></i> ${match.date}
@@ -638,14 +722,12 @@
                     });
                     
                     container.innerHTML = html;
-                } else {
-                    container.innerHTML = '<div class="notice-item">جميع المباريات انتهت 🏆</div>';
                 }
                 
                 const topScorer = [...scorers].sort((a,b) => b.goals - a.goals)[0];
                 if (topScorer) {
                     document.getElementById('topScorerNotice').innerHTML = 
-                        `${topScorer.player} (${topScorer.goals} أهداف) - <span class="team-badge team-${topScorer.team}" style="background: rgba(255,255,255,0.2);">فريق ${topScorer.team}</span>`;
+                        `${topScorer.player} (${topScorer.goals} أهداف) - فريق ${topScorer.team}`;
                 }
             }
 
@@ -657,10 +739,15 @@
                     const nextMatch = nextMatches[0];
                     const matchDate = new Date();
                     
-                    if (nextMatch.date.includes("4 Mar")) matchDate.setMonth(2, 4);
-                    else if (nextMatch.date.includes("5 Mar")) matchDate.setMonth(2, 5);
+                    if (nextMatch.date.includes("9 Mar")) matchDate.setMonth(2, 9);
+                    else if (nextMatch.date.includes("10 Mar")) matchDate.setMonth(2, 10);
+                    else if (nextMatch.date.includes("11 Mar")) matchDate.setMonth(2, 11);
+                    else if (nextMatch.date.includes("12 Mar")) matchDate.setMonth(2, 12);
+                    else if (nextMatch.date.includes("13 Mar")) matchDate.setMonth(2, 13);
+                    else if (nextMatch.date.includes("14 Mar")) matchDate.setMonth(2, 14);
+                    else if (nextMatch.date.includes("15 Mar")) matchDate.setMonth(2, 15);
                     
-                    matchDate.setHours(nextMatch.date.includes("9:30") ? 21 : 22, 30, 0);
+                    matchDate.setHours(22, 0, 0);
                     
                     const diff = matchDate - now;
                     if (diff > 0) {
@@ -695,60 +782,31 @@
             function renderMatches() {
                 let html = '';
                 
-                html += `<div class="match-day"><i class="fas fa-sun me-2"></i> 25 فبراير 2026</div>`;
-                matches.filter(m => m.id === 1).forEach(m => {
-                    html += `<div class="d-flex justify-content-between align-items-center p-3 match-item">
-                        <div><span class="team-badge team-${m.home}">${m.home}</span> ${teamNames[m.home]}  vs  ${teamNames[m.away]} <span class="team-badge team-${m.away}">${m.away}</span></div>
-                        <div><span class="badge bg-success p-2">${m.result}</span> <span class="text-muted ms-2"><i class="far fa-clock"></i> ${m.date}</span></div>
-                    </div>`;
-                });
+                const stages = [
+                    { label: "دوري المجموعات", ids: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15] },
+                    { label: "ربع النهائي - ذهاب", ids: [16,17] },
+                    { label: "ربع النهائي - إياب", ids: [18,19] },
+                    { label: "نصف النهائي - ذهاب", ids: [20,21] },
+                    { label: "نصف النهائي - إياب", ids: [22,23] }
+                ];
                 
-                html += `<div class="match-day"><i class="fas fa-moon me-2"></i> 26 فبراير 2026</div>`;
-                matches.filter(m => m.id === 2 || m.id === 3).forEach(m => {
-                    html += `<div class="d-flex justify-content-between align-items-center p-3 match-item">
-                        <div><span class="team-badge team-${m.home}">${m.home}</span> ${teamNames[m.home]}  vs  ${teamNames[m.away]} <span class="team-badge team-${m.away}">${m.away}</span></div>
-                        <div><span class="badge bg-success p-2">${m.result}</span> <span class="text-muted ms-2"><i class="far fa-clock"></i> ${m.date}</span></div>
-                    </div>`;
-                });
-                
-                html += `<div class="match-day"><i class="fas fa-moon me-2"></i> 27 فبراير 2026</div>`;
-                matches.filter(m => m.id === 4 || m.id === 5).forEach(m => {
-                    html += `<div class="d-flex justify-content-between align-items-center p-3 match-item">
-                        <div><span class="team-badge team-${m.home}">${m.home}</span> ${teamNames[m.home]}  vs  ${teamNames[m.away]} <span class="team-badge team-${m.away}">${m.away}</span></div>
-                        <div><span class="badge bg-success p-2">${m.result}</span> <span class="text-muted ms-2"><i class="far fa-clock"></i> ${m.date}</span></div>
-                    </div>`;
-                });
-                
-                html += `<div class="match-day"><i class="fas fa-moon me-2"></i> 28 فبراير 2026</div>`;
-                matches.filter(m => m.id === 6 || m.id === 7).forEach(m => {
-                    html += `<div class="d-flex justify-content-between align-items-center p-3 match-item">
-                        <div><span class="team-badge team-${m.home}">${m.home}</span> ${teamNames[m.home]}  vs  ${teamNames[m.away]} <span class="team-badge team-${m.away}">${m.away}</span></div>
-                        <div><span class="badge bg-success p-2">${m.result}</span> <span class="text-muted ms-2"><i class="far fa-clock"></i> ${m.date}</span></div>
-                    </div>`;
-                });
-                
-                html += `<div class="match-day"><i class="fas fa-moon me-2"></i> 2 مارس 2026</div>`;
-                matches.filter(m => m.id === 8 || m.id === 9).forEach(m => {
-                    html += `<div class="d-flex justify-content-between align-items-center p-3 match-item">
-                        <div><span class="team-badge team-${m.home}">${m.home}</span> ${teamNames[m.home]}  vs  ${teamNames[m.away]} <span class="team-badge team-${m.away}">${m.away}</span></div>
-                        <div><span class="badge bg-success p-2">${m.result}</span> <span class="text-muted ms-2"><i class="far fa-clock"></i> ${m.date}</span></div>
-                    </div>`;
-                });
-                
-                html += `<div class="match-day"><i class="fas fa-moon me-2"></i> 3 مارس 2026</div>`;
-                matches.filter(m => m.id === 10 || m.id === 11).forEach(m => {
-                    html += `<div class="d-flex justify-content-between align-items-center p-3 match-item">
-                        <div><span class="team-badge team-${m.home}">${m.home}</span> ${teamNames[m.home]}  vs  ${teamNames[m.away]} <span class="team-badge team-${m.away}">${m.away}</span></div>
-                        <div><span class="badge bg-success p-2">${m.result}</span> <span class="text-muted ms-2"><i class="far fa-clock"></i> ${m.date}</span></div>
-                    </div>`;
-                });
-                
-                html += `<div class="match-day"><i class="fas fa-calendar-alt me-2"></i> المباريات القادمة</div>`;
-                matches.filter(m => m.id > 11).forEach(m => {
-                    html += `<div class="d-flex justify-content-between align-items-center p-3 match-item">
-                        <div><span class="team-badge team-${m.home}">${m.home}</span> ${teamNames[m.home]}  vs  ${teamNames[m.away]} <span class="team-badge team-${m.away}">${m.away}</span></div>
-                        <div><span class="badge bg-secondary p-2">${m.result}</span> <span class="text-muted ms-2"><i class="far fa-clock"></i> ${m.date}</span></div>
-                    </div>`;
+                stages.forEach(stage => {
+                    html += `<div class="match-day"><i class="fas fa-calendar-day me-2"></i> ${stage.label}</div>`;
+                    stage.ids.forEach(id => {
+                        const m = matches.find(m => m.id === id);
+                        if (m) {
+                            const resultClass = m.result === '?' ? 'bg-secondary' : 'bg-success';
+                            let matchText = '';
+                            if (m.home === 0) matchText = `${teamNames[m.away]}`;
+                            else if (m.away === 0) matchText = `${teamNames[m.home]}`;
+                            else matchText = `${teamNames[m.home]} vs ${teamNames[m.away]}`;
+                            
+                            html += `<div class="d-flex justify-content-between align-items-center p-3 match-item">
+                                <div>${matchText}</div>
+                                <div><span class="badge ${resultClass} p-2">${m.result}</span> <span class="text-muted ms-2"><i class="far fa-clock"></i> ${m.date}</span></div>
+                            </div>`;
+                        }
+                    });
                 });
                 
                 document.getElementById('matchesList').innerHTML = html;
@@ -758,7 +816,6 @@
             let showAllScorers = false;
             function renderScorers() {
                 const sorted = [...scorers].sort((a,b) => b.goals - a.goals);
-                // إزالة التكرارات إن وجدت
                 const uniqueScorers = [];
                 const seen = new Set();
                 sorted.forEach(s => {
@@ -817,8 +874,8 @@
             // Admin actions
             document.getElementById('submitResultBtn').addEventListener('click', ()=>{
                 const newRes = document.getElementById('matchResultInput').value.trim();
-                if(newRes && matches[11]) { 
-                    matches[11].result = newRes; 
+                if(newRes && matches[16]) { 
+                    matches[16].result = newRes; 
                     renderMatches(); 
                     document.getElementById('matchResultInput').value = ''; 
                 }
@@ -851,17 +908,15 @@
             document.getElementById('matchesList').addEventListener('dblclick', (e)=> {
                 if(!adminPanel.classList.contains('hidden')) {
                     let newRes = prompt('أدخل النتيجة الجديدة (مثال 2-1)');
-                    if(newRes && newRes.includes('-') && matches[11]) { 
-                        matches[11].result = newRes; 
+                    if(newRes && newRes.includes('-') && matches[16]) { 
+                        matches[16].result = newRes; 
                         renderMatches(); 
                     }
                 } else alert("يجب تسجيل الدخول كمسؤول أولاً");
             });
 
-            // Countdown timer update every second
             setInterval(updateCountdown, 1000);
 
-            // Initial renders
             renderStandings(); 
             renderMatches(); 
             renderScorers(); 
@@ -871,4 +926,4 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-    </html>
+</html>
